@@ -1,0 +1,45 @@
+{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: 현재 파일",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "args":["--input_img", "./example/remove-anything/test1.png",
+            "--coords_type", "click",
+            "--point_coords", "200", "450",
+            "--point_labels", "1",
+            "--dilate_kernel_size", "15",
+            "--output_dir", "./results",
+            "--sam_model_type", "vit_h",
+            "--sam_ckpt", "./pretrained_models/sam_vit_h_4b8939.pth",
+            "--lama_config","./lama/configs/prediction/default.yaml",
+            "--lama_ckpt", "./pretrained_models/big-lama" 
+        ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "remove_anything",
+            "type": "python",
+            "request": "launch",
+            "program": "remove_anything.py",
+            "args":["--input_img", "./example/remove-anything/aligned_img.jpg",
+            "--coords_type", "click",
+            "--point_coords", "200", "450",
+            "--point_labels", "1",
+            //"--dilate_kernel_size", "15",
+            "--output_dir", "./results",
+            "--sam_model_type", "vit_h",
+            "--sam_ckpt", "./pretrained_models/sam_vit_h_4b8939.pth",
+            "--lama_config","./lama/configs/prediction/default.yaml",
+            "--lama_ckpt", "./pretrained_models/big-lama"],            
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+    ]
+}
