@@ -28,7 +28,7 @@
             "type": "python",
             "request": "launch",
             "program": "remove_anything.py",
-            "args":["--input_img", "./example/remove-anything/aligned_img.jpg",
+            "args":["--input_img", "./example/remove-anything/driver_06.jpg",
             "--coords_type", "click",
             "--point_coords", "200", "450",
             "--point_labels", "1",

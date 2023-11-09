@@ -17,5 +17,5 @@ pretrained_models/big-lama
 *.pth
 
 results/*
-
+*.jpg
 

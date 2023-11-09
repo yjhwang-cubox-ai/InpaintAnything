@@ -76,7 +76,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     setup_args(parser)
     args = parser.parse_args(sys.argv[1:])
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    # device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    device = torch.device('cuda:0') if torch.cuda.is_available() else torch.device('cpu')
 
     # if args.coords_type == "click":
     #     latest_coords = get_clicked_point(args.input_img)
@@ -98,7 +100,7 @@ if __name__ == "__main__":
     # test = np.transpose(masks, [1,2,0])
     # cv2.imshow("mask", test)
     # cv2.waitKey()
-    masks = cv2.imread("./example/remove-anything/mask_.png")
+    masks = cv2.imread("./example/remove-anything/black_result.jpg")
     masks = np.transpose(masks, [2,0,1])
 
     # dilate mask to avoid unmasked edge effect
