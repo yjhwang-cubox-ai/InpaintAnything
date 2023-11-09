@@ -76,9 +76,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     setup_args(parser)
     args = parser.parse_args(sys.argv[1:])
-    # device = "cuda" if torch.cuda.is_available() else "cpu"
+    device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    device = torch.device('cuda:0') if torch.cuda.is_available() else torch.device('cpu')
+    #device = torch.device('cuda:0') if torch.cuda.is_available() else torch.device('cpu')
 
     # if args.coords_type == "click":
     #     latest_coords = get_clicked_point(args.input_img)
